@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		317E4CEE35F4C944FC7397A9 /* libPods-LrcDownloader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F727C5CBC0FAE091ACD0756 /* libPods-LrcDownloader.a */; };
+		B156AE161EF52AD40020F7B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B156AE151EF52AD40020F7B4 /* AppDelegate.m */; };
+		B156AE191EF52AD40020F7B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B156AE181EF52AD40020F7B4 /* main.m */; };
+		B156AE1C1EF52AD40020F7B4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B156AE1B1EF52AD40020F7B4 /* ViewController.m */; };
+		B156AE1E1EF52AD40020F7B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B156AE1D1EF52AD40020F7B4 /* Assets.xcassets */; };
+		B156AE211EF52AD40020F7B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B156AE1F1EF52AD40020F7B4 /* Main.storyboard */; };
+		B156AE2B1EF65EAF0020F7B4 /* KugouLyrics.m in Sources */ = {isa = PBXBuildFile; fileRef = B156AE2A1EF65EAF0020F7B4 /* KugouLyrics.m */; };
+		B156AE2E1EF65EC50020F7B4 /* RequestSender.m in Sources */ = {isa = PBXBuildFile; fileRef = B156AE2D1EF65EC50020F7B4 /* RequestSender.m */; };
+		B156AE311EF65EDA0020F7B4 /* KeyValue_SearchLyrics.m in Sources */ = {isa = PBXBuildFile; fileRef = B156AE301EF65EDA0020F7B4 /* KeyValue_SearchLyrics.m */; };
+		B156AE341EF670210020F7B4 /* NSString+MusicFile.m in Sources */ = {isa = PBXBuildFile; fileRef = B156AE331EF670210020F7B4 /* NSString+MusicFile.m */; };
+		B181FE981EF6C40800DDFB8C /* MusicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B181FE971EF6C40800DDFB8C /* MusicItem.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1902413359B0A5F3C095C291 /* Pods-LrcDownloader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LrcDownloader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LrcDownloader/Pods-LrcDownloader.debug.xcconfig"; sourceTree = "<group>"; };
+		8F727C5CBC0FAE091ACD0756 /* libPods-LrcDownloader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LrcDownloader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B156AE111EF52AD40020F7B4 /* 歌词下载器.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "歌词下载器.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B156AE141EF52AD40020F7B4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B156AE151EF52AD40020F7B4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B156AE181EF52AD40020F7B4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B156AE1A1EF52AD40020F7B4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B156AE1B1EF52AD40020F7B4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B156AE1D1EF52AD40020F7B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B156AE201EF52AD40020F7B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B156AE221EF52AD40020F7B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B156AE291EF65EAF0020F7B4 /* KugouLyrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KugouLyrics.h; sourceTree = "<group>"; };
+		B156AE2A1EF65EAF0020F7B4 /* KugouLyrics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KugouLyrics.m; sourceTree = "<group>"; };
+		B156AE2C1EF65EC50020F7B4 /* RequestSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestSender.h; sourceTree = "<group>"; };
+		B156AE2D1EF65EC50020F7B4 /* RequestSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestSender.m; sourceTree = "<group>"; };
+		B156AE2F1EF65EDA0020F7B4 /* KeyValue_SearchLyrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyValue_SearchLyrics.h; sourceTree = "<group>"; };
+		B156AE301EF65EDA0020F7B4 /* KeyValue_SearchLyrics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyValue_SearchLyrics.m; sourceTree = "<group>"; };
+		B156AE321EF670210020F7B4 /* NSString+MusicFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MusicFile.h"; sourceTree = "<group>"; };
+		B156AE331EF670210020F7B4 /* NSString+MusicFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MusicFile.m"; sourceTree = "<group>"; };
+		B181FE961EF6C40800DDFB8C /* MusicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicItem.h; sourceTree = "<group>"; };
+		B181FE971EF6C40800DDFB8C /* MusicItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicItem.m; sourceTree = "<group>"; };
+		F3E3A41D6398A2085C3B11C7 /* Pods-LrcDownloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LrcDownloader.release.xcconfig"; path = "Pods/Target Support Files/Pods-LrcDownloader/Pods-LrcDownloader.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B156AE0E1EF52AD40020F7B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				317E4CEE35F4C944FC7397A9 /* libPods-LrcDownloader.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		78B8F3E96BD52F25193AFE5C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F727C5CBC0FAE091ACD0756 /* libPods-LrcDownloader.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		94FCB9205456EA34FD4718A5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1902413359B0A5F3C095C291 /* Pods-LrcDownloader.debug.xcconfig */,
+				F3E3A41D6398A2085C3B11C7 /* Pods-LrcDownloader.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B156AE081EF52AD40020F7B4 = {
+			isa = PBXGroup;
+			children = (
+				B156AE131EF52AD40020F7B4 /* LrcDownloader */,
+				B156AE121EF52AD40020F7B4 /* Products */,
+				94FCB9205456EA34FD4718A5 /* Pods */,
+				78B8F3E96BD52F25193AFE5C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B156AE121EF52AD40020F7B4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B156AE111EF52AD40020F7B4 /* 歌词下载器.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B156AE131EF52AD40020F7B4 /* LrcDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				B156AE2F1EF65EDA0020F7B4 /* KeyValue_SearchLyrics.h */,
+				B156AE301EF65EDA0020F7B4 /* KeyValue_SearchLyrics.m */,
+				B156AE2C1EF65EC50020F7B4 /* RequestSender.h */,
+				B156AE2D1EF65EC50020F7B4 /* RequestSender.m */,
+				B156AE291EF65EAF0020F7B4 /* KugouLyrics.h */,
+				B156AE2A1EF65EAF0020F7B4 /* KugouLyrics.m */,
+				B156AE141EF52AD40020F7B4 /* AppDelegate.h */,
+				B156AE151EF52AD40020F7B4 /* AppDelegate.m */,
+				B156AE1A1EF52AD40020F7B4 /* ViewController.h */,
+				B156AE1B1EF52AD40020F7B4 /* ViewController.m */,
+				B156AE1D1EF52AD40020F7B4 /* Assets.xcassets */,
+				B156AE1F1EF52AD40020F7B4 /* Main.storyboard */,
+				B156AE221EF52AD40020F7B4 /* Info.plist */,
+				B156AE171EF52AD40020F7B4 /* Supporting Files */,
+				B156AE321EF670210020F7B4 /* NSString+MusicFile.h */,
+				B156AE331EF670210020F7B4 /* NSString+MusicFile.m */,
+				B181FE961EF6C40800DDFB8C /* MusicItem.h */,
+				B181FE971EF6C40800DDFB8C /* MusicItem.m */,
+			);
+			path = LrcDownloader;
+			sourceTree = "<group>";
+		};
+		B156AE171EF52AD40020F7B4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B156AE181EF52AD40020F7B4 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B156AE101EF52AD40020F7B4 /* LrcDownloader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B156AE251EF52AD40020F7B4 /* Build configuration list for PBXNativeTarget "LrcDownloader" */;
+			buildPhases = (
+				FA82FD6AB46AD2BF21772239 /* [CP] Check Pods Manifest.lock */,
+				B156AE0D1EF52AD40020F7B4 /* Sources */,
+				B156AE0E1EF52AD40020F7B4 /* Frameworks */,
+				B156AE0F1EF52AD40020F7B4 /* Resources */,
+				21AC888BF1C519BE22D6BA5F /* [CP] Embed Pods Frameworks */,
+				D4A1235FD98FB2BE69D05C5A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LrcDownloader;
+			productName = LrcDownloader;
+			productReference = B156AE111EF52AD40020F7B4 /* 歌词下载器.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B156AE091EF52AD40020F7B4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Zhonglian;
+				TargetAttributes = {
+					B156AE101EF52AD40020F7B4 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = XH264QVU7V;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B156AE0C1EF52AD40020F7B4 /* Build configuration list for PBXProject "LrcDownloader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B156AE081EF52AD40020F7B4;
+			productRefGroup = B156AE121EF52AD40020F7B4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B156AE101EF52AD40020F7B4 /* LrcDownloader */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B156AE0F1EF52AD40020F7B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B156AE1E1EF52AD40020F7B4 /* Assets.xcassets in Resources */,
+				B156AE211EF52AD40020F7B4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		21AC888BF1C519BE22D6BA5F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LrcDownloader/Pods-LrcDownloader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4A1235FD98FB2BE69D05C5A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LrcDownloader/Pods-LrcDownloader-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA82FD6AB46AD2BF21772239 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B156AE0D1EF52AD40020F7B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B156AE1C1EF52AD40020F7B4 /* ViewController.m in Sources */,
+				B156AE2B1EF65EAF0020F7B4 /* KugouLyrics.m in Sources */,
+				B156AE2E1EF65EC50020F7B4 /* RequestSender.m in Sources */,
+				B156AE191EF52AD40020F7B4 /* main.m in Sources */,
+				B156AE341EF670210020F7B4 /* NSString+MusicFile.m in Sources */,
+				B156AE161EF52AD40020F7B4 /* AppDelegate.m in Sources */,
+				B181FE981EF6C40800DDFB8C /* MusicItem.m in Sources */,
+				B156AE311EF65EDA0020F7B4 /* KeyValue_SearchLyrics.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B156AE1F1EF52AD40020F7B4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B156AE201EF52AD40020F7B4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B156AE231EF52AD40020F7B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B156AE241EF52AD40020F7B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		B156AE261EF52AD40020F7B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1902413359B0A5F3C095C291 /* Pods-LrcDownloader.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = LrcDownloader/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eldxin7.LrcDownloader;
+				PRODUCT_NAME = "歌词下载器";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Debug;
+		};
+		B156AE271EF52AD40020F7B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3E3A41D6398A2085C3B11C7 /* Pods-LrcDownloader.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = LrcDownloader/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eldxin7.LrcDownloader;
+				PRODUCT_NAME = "歌词下载器";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B156AE0C1EF52AD40020F7B4 /* Build configuration list for PBXProject "LrcDownloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B156AE231EF52AD40020F7B4 /* Debug */,
+				B156AE241EF52AD40020F7B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B156AE251EF52AD40020F7B4 /* Build configuration list for PBXNativeTarget "LrcDownloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B156AE261EF52AD40020F7B4 /* Debug */,
+				B156AE271EF52AD40020F7B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B156AE091EF52AD40020F7B4 /* Project object */;
+}

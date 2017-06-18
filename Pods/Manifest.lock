@@ -1,0 +1,23 @@
+PODS:
+  - EZAudio (1.1.5):
+    - EZAudio/Full (= 1.1.5)
+  - EZAudio/Core (1.1.5)
+  - EZAudio/Full (1.1.5):
+    - EZAudio/Core
+    - TPCircularBuffer (= 1.1)
+  - MJExtension (3.0.13)
+  - TPCircularBuffer (1.1)
+
+DEPENDENCIES:
+  - EZAudio (~> 1.1.4)
+  - EZAudio/Core (~> 1.1.4)
+  - MJExtension
+
+SPEC CHECKSUMS:
+  EZAudio: 3b1cb4b6d7ebca68f0c2478576d75940aad4aa99
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  TPCircularBuffer: 4960a919e667280f7f38963d771f45871b64fe62
+
+PODFILE CHECKSUM: d803e310292b3a2e45135ee0a830f451d29e903c
+
+COCOAPODS: 1.2.1
