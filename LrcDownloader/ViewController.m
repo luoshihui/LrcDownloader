@@ -11,7 +11,7 @@
 #import "KugouLyrics.h"
 #import <AVFoundation/AVFoundation.h>
 #import "MusicItem.h"
-#import <EZAudio.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface ViewController()<NSTableViewDelegate, NSTableViewDataSource>
 
@@ -105,12 +105,13 @@
             MusicItem *item = [self.fileList objectAtIndex:i];
             NSString *file = item.name;
             NSString *path = [NSString stringWithFormat:@"%@/%@", self.selectedPath, file];
-            EZAudioFile *audioFile = [EZAudioFile audioFileWithURL:[NSURL fileURLWithPath:path]];
-//            AVURLAsset *audioAsset = [AVURLAsset URLAssetWithURL:[NSURL fileURLWithPath:path] options:nil];
-//            CMTime audioDuration= audioAsset.duration;
-//            float audioDurationSeconds = CMTimeGetSeconds(audioDuration);
+            
+            AVURLAsset *audioAsset = [AVURLAsset URLAssetWithURL:[NSURL fileURLWithPath:path] options:nil];
+            CMTime audioDuration= audioAsset.duration;
+            float audioDurationSeconds = CMTimeGetSeconds(audioDuration);
+            
             NSString *fileName = [file removeSuffix];
-            NSString *lrc = [KugouLyrics getLyricsByTitle:fileName getLyricsByArtist:nil getLyricsBySongDuration:audioFile.duration];
+            NSString *lrc = [KugouLyrics getLyricsByTitle:fileName getLyricsByArtist:nil getLyricsBySongDuration:audioDurationSeconds];
             if (lrc.length>0) {
                 NSString *lrcFilePath = [NSString stringWithFormat:@"%@/%@.lrc", self.selectedPath, fileName];
                 [lrc writeToFile:lrcFilePath atomically:YES encoding:NSUTF8StringEncoding error:nil];

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		317E4CEE35F4C944FC7397A9 /* libPods-LrcDownloader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F727C5CBC0FAE091ACD0756 /* libPods-LrcDownloader.a */; };
+		B112C6981EF7DE60006A4E29 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B112C6971EF7DE60006A4E29 /* CoreAudio.framework */; };
+		B139F1A41EF7E0D800D9710F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B139F1A31EF7E0D800D9710F /* AudioToolbox.framework */; };
 		B156AE161EF52AD40020F7B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B156AE151EF52AD40020F7B4 /* AppDelegate.m */; };
 		B156AE191EF52AD40020F7B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B156AE181EF52AD40020F7B4 /* main.m */; };
 		B156AE1C1EF52AD40020F7B4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B156AE1B1EF52AD40020F7B4 /* ViewController.m */; };
@@ -23,6 +25,8 @@
 /* Begin PBXFileReference section */
 		1902413359B0A5F3C095C291 /* Pods-LrcDownloader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LrcDownloader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LrcDownloader/Pods-LrcDownloader.debug.xcconfig"; sourceTree = "<group>"; };
 		8F727C5CBC0FAE091ACD0756 /* libPods-LrcDownloader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LrcDownloader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B112C6971EF7DE60006A4E29 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		B139F1A31EF7E0D800D9710F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B156AE111EF52AD40020F7B4 /* 歌词下载器.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "歌词下载器.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B156AE141EF52AD40020F7B4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B156AE151EF52AD40020F7B4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -50,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B139F1A41EF7E0D800D9710F /* AudioToolbox.framework in Frameworks */,
+				B112C6981EF7DE60006A4E29 /* CoreAudio.framework in Frameworks */,
 				317E4CEE35F4C944FC7397A9 /* libPods-LrcDownloader.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,6 +66,8 @@
 		78B8F3E96BD52F25193AFE5C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B139F1A31EF7E0D800D9710F /* AudioToolbox.framework */,
+				B112C6971EF7DE60006A4E29 /* CoreAudio.framework */,
 				8F727C5CBC0FAE091ACD0756 /* libPods-LrcDownloader.a */,
 			);
 			name = Frameworks;
