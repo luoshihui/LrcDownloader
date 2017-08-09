@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		317E4CEE35F4C944FC7397A9 /* libPods-LrcDownloader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F727C5CBC0FAE091ACD0756 /* libPods-LrcDownloader.a */; };
-		B112C6981EF7DE60006A4E29 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B112C6971EF7DE60006A4E29 /* CoreAudio.framework */; };
-		B139F1A41EF7E0D800D9710F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B139F1A31EF7E0D800D9710F /* AudioToolbox.framework */; };
+		B139F1AB1EF8C2F400D9710F /* libswiftAVFoundation.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B139F1AA1EF8C2F400D9710F /* libswiftAVFoundation.tbd */; };
 		B156AE161EF52AD40020F7B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B156AE151EF52AD40020F7B4 /* AppDelegate.m */; };
 		B156AE191EF52AD40020F7B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B156AE181EF52AD40020F7B4 /* main.m */; };
 		B156AE1C1EF52AD40020F7B4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B156AE1B1EF52AD40020F7B4 /* ViewController.m */; };
@@ -27,6 +26,8 @@
 		8F727C5CBC0FAE091ACD0756 /* libPods-LrcDownloader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LrcDownloader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B112C6971EF7DE60006A4E29 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		B139F1A31EF7E0D800D9710F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		B139F1A51EF8AAE800D9710F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B139F1AA1EF8C2F400D9710F /* libswiftAVFoundation.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftAVFoundation.tbd; path = System/Library/PrivateFrameworks/Swift/libswiftAVFoundation.tbd; sourceTree = SDKROOT; };
 		B156AE111EF52AD40020F7B4 /* 歌词下载器.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "歌词下载器.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B156AE141EF52AD40020F7B4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B156AE151EF52AD40020F7B4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -54,8 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B139F1A41EF7E0D800D9710F /* AudioToolbox.framework in Frameworks */,
-				B112C6981EF7DE60006A4E29 /* CoreAudio.framework in Frameworks */,
+				B139F1AB1EF8C2F400D9710F /* libswiftAVFoundation.tbd in Frameworks */,
 				317E4CEE35F4C944FC7397A9 /* libPods-LrcDownloader.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,6 +66,8 @@
 		78B8F3E96BD52F25193AFE5C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B139F1AA1EF8C2F400D9710F /* libswiftAVFoundation.tbd */,
+				B139F1A51EF8AAE800D9710F /* AVFoundation.framework */,
 				B139F1A31EF7E0D800D9710F /* AudioToolbox.framework */,
 				B112C6971EF7DE60006A4E29 /* CoreAudio.framework */,
 				8F727C5CBC0FAE091ACD0756 /* libPods-LrcDownloader.a */,
@@ -373,13 +375,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1902413359B0A5F3C095C291 /* Pods-LrcDownloader.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LrcDownloader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks/Swift",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.eldxin7.LrcDownloader;
 				PRODUCT_NAME = "歌词下载器";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -390,13 +397,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F3E3A41D6398A2085C3B11C7 /* Pods-LrcDownloader.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LrcDownloader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks/Swift",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.eldxin7.LrcDownloader;
 				PRODUCT_NAME = "歌词下载器";
 				PROVISIONING_PROFILE_SPECIFIER = "";

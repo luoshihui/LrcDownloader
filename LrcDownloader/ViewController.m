@@ -111,25 +111,34 @@
             float audioDurationSeconds = CMTimeGetSeconds(audioDuration);
             
             NSString *fileName = [file removeSuffix];
-            NSString *lrc = [KugouLyrics getLyricsByTitle:fileName getLyricsByArtist:nil getLyricsBySongDuration:audioDurationSeconds];
-            if (lrc.length>0) {
-                NSString *lrcFilePath = [NSString stringWithFormat:@"%@/%@.lrc", self.selectedPath, fileName];
-                [lrc writeToFile:lrcFilePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
-                //设置成功
-                item.status = DownloadStatusDone;
-            }else {
-                //设置失败
-                item.status = DownloadStatusFail;
-            }
-
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.filesListTable reloadData];
-                [self.progressBar setUsesThreadedAnimation:YES];
-                [self.progressBar setDoubleValue:(int)((i+1)/self.fileList.count)*100];
-                [self.progressLabel setStringValue:[NSString stringWithFormat:@"%ld/%ld", i+1, self.fileList.count]];
-            });
+            [KugouLyrics getLyricsByTitle:fileName getLyricsByArtist:nil getLyricsBySongDuration:audioDurationSeconds complete:^(NSString *songName, NSString *singer, NSString *lrc) {
+                if (lrc.length>0) {
+                    NSString *lrcFilePath = [NSString stringWithFormat:@"%@/%@.lrc", self.selectedPath, fileName];
+                    songName = songName.length > 0 ? songName : fileName;
+                    singer = singer.length > 0 ? singer : @"未知";
+                    NSString *lrcHeader = [self lrcHeaderForSong:songName singer:singer];
+                    lrc = [lrcHeader stringByAppendingString:lrc];
+                    [lrc writeToFile:lrcFilePath atomically:NO encoding:NSUTF8StringEncoding error:nil];
+                    //设置成功
+                    item.status = DownloadStatusDone;
+                }else {
+                    //设置失败
+                    item.status = DownloadStatusFail;
+                }
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.filesListTable reloadData];
+                    [self.progressBar setUsesThreadedAnimation:YES];
+                    [self.progressBar setDoubleValue:(int)((i+1)/self.fileList.count)*100];
+                    [self.progressLabel setStringValue:[NSString stringWithFormat:@"%ld/%ld", i+1, self.fileList.count]];
+                });
+            }];
         }
     });
+}
+
+- (NSString *)lrcHeaderForSong:(NSString *)songName singer:(NSString *)singer  {
+    return [NSString stringWithFormat:@"[ti:%@]\r\n[ar:%@]\r\n[al:未知]\r\n", songName, singer];
 }
 
 @end

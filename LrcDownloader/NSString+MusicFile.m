@@ -24,7 +24,7 @@
 }
 
 - (NSArray *)songSuffixList {
-    return @[@"mp3", @"flac", @"wav", @"ape", @"aac"];
+    return @[@"mp3", @"wav", @"aac"/*,@"flac",  @"ape"*/];
 }
 
 - (NSString *)removeSuffix {

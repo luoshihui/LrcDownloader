@@ -12,10 +12,10 @@
 
 @interface KugouLyrics : NSObject
 
-+(NSString*)getLyricsByTitle:(NSString*)Title getLyricsByArtist:(NSString*)Artist getLyricsBySongDuration:(double)duration;
++ (void)getLyricsByTitle:(NSString *)Title getLyricsByArtist:(NSString *)Artist getLyricsBySongDuration:(double)duration complete:(void (^)(NSString *songName, NSString *singer, NSString *lrc))complete;
 
-+(void)getLyricsListByTitle:(NSString *)Title getLyricsListByArtist:(NSString *)Artist getLyricsBySongDuration:(double)duration AddToArrayController:(NSArrayController *)array_controller;
++ (void)getLyricsListByTitle:(NSString *)Title getLyricsListByArtist:(NSString *)Artist getLyricsBySongDuration:(double)duration AddToArrayController:(NSArrayController *)array_controller;
 
-+(NSString*)getLyricsByID:(NSString*)ID getLyricsByAccesskey:(NSString*)accesskey;
++ (NSString *)getLyricsByID:(NSString *)ID getLyricsByAccesskey:(NSString *)accesskey;
 
 @end
