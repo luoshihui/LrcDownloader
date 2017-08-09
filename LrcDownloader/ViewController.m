@@ -65,7 +65,7 @@
 
 - (void)listSongFilesWithPath:(NSString *)path {
     NSFileManager *manager = [NSFileManager defaultManager];
-    NSArray *fileList = [manager contentsOfDirectoryAtPath:path error:nil];
+    NSArray *fileList = [manager subpathsOfDirectoryAtPath:path error:nil];
     [self.fileList removeAllObjects];
     for (NSString *fileName in fileList) {
         if ([fileName isSongSuffix]) {
@@ -76,6 +76,8 @@
     [self.filesListTable reloadData];
     [self.progressLabel setStringValue:[NSString stringWithFormat:@"0/%ld", self.fileList.count]];
 }
+
+
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
     return self.fileList.count;
@@ -104,16 +106,30 @@
         for (NSInteger i = 0; i< self.fileList.count;i++) {
             MusicItem *item = [self.fileList objectAtIndex:i];
             NSString *file = item.name;
-            NSString *path = [NSString stringWithFormat:@"%@/%@", self.selectedPath, file];
+            NSString *subPath = item.path;
+            NSString *path = [NSString stringWithFormat:@"%@/%@%@", self.selectedPath, subPath, file];
             
-            AVURLAsset *audioAsset = [AVURLAsset URLAssetWithURL:[NSURL fileURLWithPath:path] options:nil];
-            CMTime audioDuration= audioAsset.duration;
-            float audioDurationSeconds = CMTimeGetSeconds(audioDuration);
+            float audioDurationSeconds = 0;
+            if ([file isApe]) {
+
+            }else if ([file isFlac]) {
+                
+            }else {
+                AVURLAsset *audioAsset = [AVURLAsset URLAssetWithURL:[NSURL fileURLWithPath:path] options:nil];
+                CMTime audioDuration= audioAsset.duration;
+                audioDurationSeconds = CMTimeGetSeconds(audioDuration);
+            }
+            
+            if (audioDurationSeconds == 0) {
+                item.status = DownloadStatusFail;
+                [self reloadTableAndProgress:i];
+                continue;
+            }
             
             NSString *fileName = [file removeSuffix];
             [KugouLyrics getLyricsByTitle:fileName getLyricsByArtist:nil getLyricsBySongDuration:audioDurationSeconds complete:^(NSString *songName, NSString *singer, NSString *lrc) {
                 if (lrc.length>0) {
-                    NSString *lrcFilePath = [NSString stringWithFormat:@"%@/%@.lrc", self.selectedPath, fileName];
+                    NSString *lrcFilePath = [NSString stringWithFormat:@"%@/%@%@.lrc", self.selectedPath,subPath,fileName];
                     songName = songName.length > 0 ? songName : fileName;
                     singer = singer.length > 0 ? singer : @"未知";
                     NSString *lrcHeader = [self lrcHeaderForSong:songName singer:singer];
@@ -125,15 +141,18 @@
                     //设置失败
                     item.status = DownloadStatusFail;
                 }
-                
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self.filesListTable reloadData];
-                    [self.progressBar setUsesThreadedAnimation:YES];
-                    [self.progressBar setDoubleValue:(int)((i+1)/self.fileList.count)*100];
-                    [self.progressLabel setStringValue:[NSString stringWithFormat:@"%ld/%ld", i+1, self.fileList.count]];
-                });
+                [self reloadTableAndProgress:i];
             }];
         }
+    });
+}
+
+- (void)reloadTableAndProgress:(NSInteger)index {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.filesListTable reloadData];
+        [self.progressBar setUsesThreadedAnimation:YES];
+        [self.progressBar setDoubleValue:(int)((index+1)/self.fileList.count)*100];
+        [self.progressLabel setStringValue:[NSString stringWithFormat:@"%ld/%ld", index+1, self.fileList.count]];
     });
 }
 

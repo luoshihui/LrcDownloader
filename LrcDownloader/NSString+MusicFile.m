@@ -24,7 +24,27 @@
 }
 
 - (NSArray *)songSuffixList {
-    return @[@"mp3", @"wav", @"aac"/*,@"flac",  @"ape"*/];
+    return @[@"mp3", @"wav", @"aac",@"flac",@"ape"];
+}
+
+- (BOOL)isWav {
+    return [[self lowercaseString] hasSuffix:@".wav"];
+}
+
+- (BOOL)isMp3 {
+    return [[self lowercaseString] hasSuffix:@".mp3"];
+}
+
+- (BOOL)isAac {
+    return [[self lowercaseString] hasSuffix:@".aac"];
+}
+
+- (BOOL)isFlac {
+    return [[self lowercaseString] hasSuffix:@".flac"];
+}
+
+- (BOOL)isApe {
+    return [[self lowercaseString] hasSuffix:@".ape"];
 }
 
 - (NSString *)removeSuffix {

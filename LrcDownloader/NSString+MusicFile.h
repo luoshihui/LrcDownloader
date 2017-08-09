@@ -14,4 +14,14 @@
 
 - (NSString *)removeSuffix;
 
+- (BOOL)isWav;
+
+- (BOOL)isMp3;
+
+- (BOOL)isAac;
+
+- (BOOL)isFlac;
+
+- (BOOL)isApe;
+
 @end

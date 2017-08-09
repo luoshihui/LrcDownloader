@@ -17,6 +17,7 @@ typedef NS_ENUM(NSInteger, DownloadStatus) {
 @interface MusicItem : NSObject
 
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *path;
 @property (nonatomic, assign) DownloadStatus status;
 
 + (instancetype)itemWithName:(NSString *)name;

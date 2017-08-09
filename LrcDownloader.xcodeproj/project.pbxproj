@@ -19,6 +19,9 @@
 		B156AE311EF65EDA0020F7B4 /* KeyValue_SearchLyrics.m in Sources */ = {isa = PBXBuildFile; fileRef = B156AE301EF65EDA0020F7B4 /* KeyValue_SearchLyrics.m */; };
 		B156AE341EF670210020F7B4 /* NSString+MusicFile.m in Sources */ = {isa = PBXBuildFile; fileRef = B156AE331EF670210020F7B4 /* NSString+MusicFile.m */; };
 		B181FE981EF6C40800DDFB8C /* MusicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B181FE971EF6C40800DDFB8C /* MusicItem.m */; };
+		B1CE2FB31F3B0C4900770D49 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B1CE2FB21F3B0C4900770D49 /* libiconv.tbd */; };
+		B1CE2FB51F3B0C6000770D49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1CE2FB41F3B0C6000770D49 /* Foundation.framework */; };
+		B1CE30811F3B11B700770D49 /* libFLAC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1CE30801F3B11B700770D49 /* libFLAC.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,9 @@
 		B156AE331EF670210020F7B4 /* NSString+MusicFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MusicFile.m"; sourceTree = "<group>"; };
 		B181FE961EF6C40800DDFB8C /* MusicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicItem.h; sourceTree = "<group>"; };
 		B181FE971EF6C40800DDFB8C /* MusicItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicItem.m; sourceTree = "<group>"; };
+		B1CE2FB21F3B0C4900770D49 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		B1CE2FB41F3B0C6000770D49 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B1CE30801F3B11B700770D49 /* libFLAC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = libFLAC.framework; sourceTree = "<group>"; };
 		F3E3A41D6398A2085C3B11C7 /* Pods-LrcDownloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LrcDownloader.release.xcconfig"; path = "Pods/Target Support Files/Pods-LrcDownloader/Pods-LrcDownloader.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,6 +61,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1CE2FB51F3B0C6000770D49 /* Foundation.framework in Frameworks */,
+				B1CE30811F3B11B700770D49 /* libFLAC.framework in Frameworks */,
+				B1CE2FB31F3B0C4900770D49 /* libiconv.tbd in Frameworks */,
 				B139F1AB1EF8C2F400D9710F /* libswiftAVFoundation.tbd in Frameworks */,
 				317E4CEE35F4C944FC7397A9 /* libPods-LrcDownloader.a in Frameworks */,
 			);
@@ -66,6 +75,8 @@
 		78B8F3E96BD52F25193AFE5C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B1CE2FB41F3B0C6000770D49 /* Foundation.framework */,
+				B1CE2FB21F3B0C4900770D49 /* libiconv.tbd */,
 				B139F1AA1EF8C2F400D9710F /* libswiftAVFoundation.tbd */,
 				B139F1A51EF8AAE800D9710F /* AVFoundation.framework */,
 				B139F1A31EF7E0D800D9710F /* AudioToolbox.framework */,
@@ -105,6 +116,7 @@
 		B156AE131EF52AD40020F7B4 /* LrcDownloader */ = {
 			isa = PBXGroup;
 			children = (
+				B1CE2EE51F3B0BC100770D49 /* Vendor */,
 				B156AE2F1EF65EDA0020F7B4 /* KeyValue_SearchLyrics.h */,
 				B156AE301EF65EDA0020F7B4 /* KeyValue_SearchLyrics.m */,
 				B156AE2C1EF65EC50020F7B4 /* RequestSender.h */,
@@ -133,6 +145,14 @@
 				B156AE181EF52AD40020F7B4 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B1CE2EE51F3B0BC100770D49 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				B1CE30801F3B11B700770D49 /* libFLAC.framework */,
+			);
+			path = Vendor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,6 +400,10 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LrcDownloader/Vendor",
+				);
 				INFOPLIST_FILE = LrcDownloader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -402,6 +426,10 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LrcDownloader/Vendor",
+				);
 				INFOPLIST_FILE = LrcDownloader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (

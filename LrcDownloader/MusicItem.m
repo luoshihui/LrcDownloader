@@ -10,9 +10,17 @@
 
 @implementation MusicItem
 
-+ (instancetype)itemWithName:(NSString *)name {
++ (instancetype)itemWithName:(NSString *)name{
     MusicItem *item = [[MusicItem alloc] init];
-    item.name = name;
+    NSArray *pathComponents = [name componentsSeparatedByString:@"/"];
+    if (pathComponents.count > 0) {
+        item.name = pathComponents.lastObject;
+        item.path = [name substringWithRange:NSMakeRange(0, name.length - [name rangeOfString:pathComponents.lastObject].length)];
+    }else {
+        item.name = name;
+        item.path = @"";
+    }
+    
     item.status = DownloadStatusWait;
     return item;
 }
@@ -20,7 +28,7 @@
 - (NSString *)statusString {
     switch (self.status) {
         case DownloadStatusDone:
-            return @"完成";
+            return @"成功";
         case DownloadStatusFail:
             return @"失败";
         case DownloadStatusWait:
