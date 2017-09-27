@@ -10,7 +10,7 @@
 
 @implementation NSString (MusicFile)
 
-- (BOOL)isSongSuffix {
+- (BOOL)isSupportSongSuffix {
     NSArray *componests = [self componentsSeparatedByString:@"."];
     if (componests.count <= 0) {
         return NO;
@@ -24,7 +24,7 @@
 }
 
 - (NSArray *)songSuffixList {
-    return @[@"mp3", @"wav", @"aac",@"flac",@"ape"];
+    return @[@"mp3", @"wav", @"aac",@"flac"];
 }
 
 - (BOOL)isWav {
@@ -41,10 +41,6 @@
 
 - (BOOL)isFlac {
     return [[self lowercaseString] hasSuffix:@".flac"];
-}
-
-- (BOOL)isApe {
-    return [[self lowercaseString] hasSuffix:@".ape"];
 }
 
 - (NSString *)removeSuffix {

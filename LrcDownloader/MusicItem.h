@@ -18,6 +18,7 @@ typedef NS_ENUM(NSInteger, DownloadStatus) {
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *path;
+@property (nonatomic, assign) float audioDuration;
 @property (nonatomic, assign) DownloadStatus status;
 
 + (instancetype)itemWithName:(NSString *)name;

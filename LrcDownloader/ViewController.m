@@ -12,6 +12,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "MusicItem.h"
 #import <AudioToolbox/AudioToolbox.h>
+#import <MJExtension/MJExtension.h>
 
 @interface ViewController()<NSTableViewDelegate, NSTableViewDataSource>
 
@@ -25,6 +26,8 @@
 
 @property (nonatomic, strong) NSMutableArray *fileList;
 @property (nonatomic, strong) NSString *selectedPath;
+@property (nonatomic, strong) NSMutableArray *successList;
+@property (nonatomic, strong) NSMutableArray *failList;
 
 @end
 
@@ -68,7 +71,7 @@
     NSArray *fileList = [manager subpathsOfDirectoryAtPath:path error:nil];
     [self.fileList removeAllObjects];
     for (NSString *fileName in fileList) {
-        if ([fileName isSongSuffix]) {
+        if ([fileName isSupportSongSuffix]) {
             MusicItem *item = [MusicItem itemWithName:fileName];
             [self.fileList addObject:item];
         }
@@ -89,6 +92,8 @@
         return item.name;
     }else if ([tableColumn.identifier isEqualToString:@"status"]) {
         return item.statusString;
+    }else if ([tableColumn.identifier isEqualToString:@"duration"]) {
+        return @(item.audioDuration);
     }
     return @"";
 }
@@ -101,28 +106,42 @@
 	return _fileList;
 }
 
+- (NSMutableArray *)successList
+{
+    if (!_successList){
+        _successList = [[NSMutableArray alloc] initWithCapacity:0];
+    }
+    return _successList;
+}
+
+- (NSMutableArray *)failList
+{
+    if (!_failList){
+        _failList = [[NSMutableArray alloc] initWithCapacity:0];
+    }
+    return _failList;
+}
+
 - (void)searchSongLrc {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        [self.failList removeAllObjects];
+        [self.successList removeAllObjects];
         for (NSInteger i = 0; i< self.fileList.count;i++) {
             MusicItem *item = [self.fileList objectAtIndex:i];
             NSString *file = item.name;
             NSString *subPath = item.path;
             NSString *path = [NSString stringWithFormat:@"%@/%@%@", self.selectedPath, subPath, file];
             
-            float audioDurationSeconds = 0;
-            if ([file isApe]) {
-
-            }else if ([file isFlac]) {
-                
-            }else {
-                AVURLAsset *audioAsset = [AVURLAsset URLAssetWithURL:[NSURL fileURLWithPath:path] options:nil];
-                CMTime audioDuration= audioAsset.duration;
-                audioDurationSeconds = CMTimeGetSeconds(audioDuration);
-            }
-            
+            AVURLAsset *audioAsset = [AVURLAsset URLAssetWithURL:[NSURL fileURLWithPath:path] options:nil];
+            CMTime audioDuration= audioAsset.duration;
+            float audioDurationSeconds = CMTimeGetSeconds(audioDuration);
+            item.audioDuration = audioDurationSeconds;
+        
             if (audioDurationSeconds == 0) {
                 item.status = DownloadStatusFail;
                 [self reloadTableAndProgress:i];
+                [self.failList addObject:item];
+                NSLog(@"歌曲解析时间失败: %@", [item mj_JSONString]);
                 continue;
             }
             
@@ -137,9 +156,12 @@
                     [lrc writeToFile:lrcFilePath atomically:NO encoding:NSUTF8StringEncoding error:nil];
                     //设置成功
                     item.status = DownloadStatusDone;
+                    [self.successList addObject:item];
                 }else {
                     //设置失败
                     item.status = DownloadStatusFail;
+                    [self.failList addObject:item];
+                    NSLog(@"未找到歌词: %@, 时长: %.2f", fileName, audioDurationSeconds);
                 }
                 [self reloadTableAndProgress:i];
             }];
@@ -153,7 +175,15 @@
         [self.progressBar setUsesThreadedAnimation:YES];
         [self.progressBar setDoubleValue:(int)((index+1)/self.fileList.count)*100];
         [self.progressLabel setStringValue:[NSString stringWithFormat:@"%ld/%ld", index+1, self.fileList.count]];
+        
+        if (index >= self.fileList.count - 1) {
+            [self finishSearching];
+        }
     });
+}
+
+- (void)finishSearching {
+    self.progressLabel.stringValue = [NSString stringWithFormat:@"完成!成功%ld首，失败%ld首", self.successList.count, self.failList.count];
 }
 
 - (NSString *)lrcHeaderForSong:(NSString *)songName singer:(NSString *)singer  {

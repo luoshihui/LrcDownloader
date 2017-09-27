@@ -10,7 +10,7 @@
 
 @interface NSString (MusicFile)
 
-- (BOOL)isSongSuffix;
+- (BOOL)isSupportSongSuffix;
 
 - (NSString *)removeSuffix;
 
@@ -21,7 +21,5 @@
 - (BOOL)isAac;
 
 - (BOOL)isFlac;
-
-- (BOOL)isApe;
 
 @end
