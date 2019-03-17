@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		317E4CEE35F4C944FC7397A9 /* libPods-LrcDownloader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F727C5CBC0FAE091ACD0756 /* libPods-LrcDownloader.a */; };
-		B139F1AB1EF8C2F400D9710F /* libswiftAVFoundation.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B139F1AA1EF8C2F400D9710F /* libswiftAVFoundation.tbd */; };
 		B156AE161EF52AD40020F7B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B156AE151EF52AD40020F7B4 /* AppDelegate.m */; };
 		B156AE191EF52AD40020F7B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B156AE181EF52AD40020F7B4 /* main.m */; };
 		B156AE1C1EF52AD40020F7B4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B156AE1B1EF52AD40020F7B4 /* ViewController.m */; };
@@ -61,7 +60,6 @@
 			files = (
 				B1CE2FB51F3B0C6000770D49 /* Foundation.framework in Frameworks */,
 				B1CE2FB31F3B0C4900770D49 /* libiconv.tbd in Frameworks */,
-				B139F1AB1EF8C2F400D9710F /* libswiftAVFoundation.tbd in Frameworks */,
 				317E4CEE35F4C944FC7397A9 /* libPods-LrcDownloader.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,7 +111,6 @@
 		B156AE131EF52AD40020F7B4 /* LrcDownloader */ = {
 			isa = PBXGroup;
 			children = (
-				B1CE2EE51F3B0BC100770D49 /* Vendor */,
 				B156AE2F1EF65EDA0020F7B4 /* KeyValue_SearchLyrics.h */,
 				B156AE301EF65EDA0020F7B4 /* KeyValue_SearchLyrics.m */,
 				B156AE2C1EF65EC50020F7B4 /* RequestSender.h */,
@@ -144,13 +141,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B1CE2EE51F3B0BC100770D49 /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Vendor;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,8 +152,6 @@
 				B156AE0D1EF52AD40020F7B4 /* Sources */,
 				B156AE0E1EF52AD40020F7B4 /* Frameworks */,
 				B156AE0F1EF52AD40020F7B4 /* Resources */,
-				21AC888BF1C519BE22D6BA5F /* [CP] Embed Pods Frameworks */,
-				D4A1235FD98FB2BE69D05C5A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -221,36 +209,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		21AC888BF1C519BE22D6BA5F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LrcDownloader/Pods-LrcDownloader-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D4A1235FD98FB2BE69D05C5A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LrcDownloader/Pods-LrcDownloader-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		FA82FD6AB46AD2BF21772239 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
